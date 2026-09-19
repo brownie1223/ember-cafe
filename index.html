@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ember Coffee</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="cart-panel" id="cart-panel">
+
+    <div class="cart-header">
+        <h2>Seu carrinho</h2>
+
+        <button id="close-cart">×</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+        <span>Total</span>
+        <strong id="cart-total">R$ 0</strong>
+    </div>
+
+    <button class="checkout-button" id="checkout">
+        Continuar para checkout
+    </button>
+
+    <div class="checkout" id="checkout-panel">
+
+        <div class="checkout-header">
+            <h2>Finalizar pedido</h2>
+
+            <button id="close-checkout">×</button>
+        </div>
+
+        <div class="checkout-summary">
+
+            <p>Resumo do pedido</p>
+
+            <div id="checkout-items"></div>
+
+            <div class="checkout-total">
+                <span>Total</span>
+                <strong id="checkout-total">R$ 0,00</strong>
+            </div>
+
+        </div>
+
+        <div class="checkout-form">
+
+            <label>
+                Nome
+                <input type="text" placeholder="Seu nome">
+            </label>
+
+            <label>
+                E-mail
+                <input type="email" placeholder="seu@email.com">
+            </label>
+
+            <label>
+                Endereço
+                <input type="text" placeholder="Rua, número">
+            </label>
+
+            <p class="demo-notice">
+                Este é um checkout demonstrativo.
+                Nenhum pagamento real será realizado.
+            </p>
+
+            <button id="finish-order">
+                Finalizar pedido
+            </button>
+
+        </div>
+
+    </div>
+    
+</div>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<body>
+
+    <header>
+
+        <a href="#" class="logo">
+            EMBER
+        </a>
+
+        <nav>
+            <a href="#loja">Loja</a>
+            <a href="#sobre">Nossa história</a>
+        </nav>
+
+        <button class="cart-button">
+            Carrinho <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    CAFÉ ESPECIAL
+                </p>
+
+                <h1>
+                    Café para<br>
+                    <em>desacelerar.</em>
+                </h1>
+
+                <p class="hero-text">
+                    Grãos selecionados, torra cuidadosa
+                    e uma experiência feita para aproveitar
+                    cada gole.
+                </p>
+
+                <a href="#loja" class="button">
+                    Explorar cafés
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="imagens/hero-coffee.jpg"
+                    alt="Café Ember preparado"
+                >
+            </div>
+        </section>
+
+
+        <section id="loja" class="products">
+
+            <div class="section-header">
+
+                <p class="eyebrow">
+                    NOSSA SELEÇÃO
+                </p>
+
+                <h2>
+                    Escolha seu café.
+                </h2>
+
+            </div>
+
+
+            <div class="product-grid">
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <img src="imagens/cafe-01.jpg" class="coffee-beans" alt="Café Aurora">
+                        <img src="imagens/cafe-01-pronto.jpg" class="coffee-ready" alt="Café Aurora preparado">
+                    </div>
+
+                    <div class="product-info">
+
+                        <div>
+                            <h3>Aurora</h3>
+                            <p>Notas de chocolate e caramelo</p>
+                        </div>
+
+                        <strong>R$ 42</strong>
+
+                    </div>
+
+                    <button
+                        class="add-cart"
+                        data-name="Aurora"
+                        data-price="42"
+                    >
+                        Adicionar
+                    </button>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <img src="imagens/cafe-02.jpg" class="coffee-beans" alt="Café Serra">
+                        <img src="imagens/cafe-02-pronto.jpg" class="coffee-ready" alt="Café Serra preparado">
+                    </div>
+
+                    <div class="product-info">
+
+                        <div>
+                            <h3>Serra</h3>
+                            <p>Notas de frutas vermelhas</p>
+                        </div>
+
+                        <strong>R$ 48</strong>
+
+                    </div>
+
+                    <button
+                        class="add-cart"
+                        data-name="Serra"
+                        data-price="48"
+                    >
+                        Adicionar
+                    </button>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-image">
+                        <img src="imagens/cafe-03.jpg" class="coffee-beans" alt="Café Eclipse">
+                        <img src="imagens/cafe-03-pronto.jpg" class="coffee-ready" alt="Café Eclipse preparado">
+                    </div>
+
+                    <div class="product-info">
+
+                        <div>
+                            <h3>Eclipse</h3>
+                            <p>Notas intensas de cacau</p>
+                        </div>
+
+                        <strong>R$ 52</strong>
+
+                    </div>
+
+                    <button
+                        class="add-cart"
+                        data-name="Eclipse"
+                        data-price="52"
+                    >
+                        Adicionar
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="sobre" class="about">
+
+            <p class="eyebrow">
+                SOBRE A EMBER
+            </p>
+
+            <h2>
+                Menos pressa.<br>
+                Mais café.
+            </h2>
+
+            <p>
+                A Ember nasceu para transformar o café
+                cotidiano em um pequeno ritual.
+            </p>
+
+            <p>
+                Selecionamos cafés especiais e cuidamos de cada
+                etapa para preservar seus aromas, sabores e
+                características únicas.
+            </p>
+
+            <p>
+                Porque, para nós, café não é apenas uma bebida. É aquele momento em que você para por alguns minutos e simplesmente aproveita.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <strong>EMBER</strong>
+
+        <span>© 2026 Ember Coffee</span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
